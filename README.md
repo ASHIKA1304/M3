@@ -17,41 +17,27 @@ To write a program to prepare EMI calculator using function without return type 
 ```
 #include <stdio.h>
 #include <math.h>
-void calculateEMI(float principal, float rate, int months);
-
-int main() {
-
-    float principal, rate;
-    int months;
-
-    printf("Enter principal amount: ");
-    scanf("%f", &principal);
-
-    printf("Enter annual interest rate (in percentage): ");
-    scanf("%f", &rate);
-
-    printf("Enter number of months (loan tenure): ");
-    scanf("%d", &months);
-    calculateEMI(principal, rate, months);
-
-    return 0;
+void cemi(float p, float r, float n) {
+    float emi;   
+    r = r / (12 * 100); 
+    n = n * 12;  
+    emi = (p * r * pow(1 + r, n)) / (pow(1 + r, n) - 1);
+    printf("Monthly EMI is= %.3f\n", emi);
 }
-void calculateEMI(float principal, float rate, int months) {
-    float monthlyRate, emi;
-
-    monthlyRate = rate / (12 * 100);
-
-    emi = (principal * monthlyRate * pow(1 + monthlyRate, months)) /
-          (pow(1 + monthlyRate, months) - 1);
-
-    printf("Monthly EMI = ₹%.2f\n", emi);
+int main() {
+   float principal, rate, time;
+   scanf("%f %f %f", &principal, &rate, &time);
+   cemi(principal, rate, time);
+   return 0;
 }
 ```
-
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/35aa84eb-2952-4396-8fb3-681ec5ebd9df)
+
+
+![438184909-3d6d442b-4c67-4774-b910-ca7fb5cfc795](https://github.com/user-attachments/assets/ec6c00de-1485-45cd-ba4d-1a44f83fab24)
 
 ## RESULT
+
 Thus the program to prepare EMI calculator using function without return type with arguments has been executed successfully
  
  
@@ -72,29 +58,24 @@ To write a C program to generate the Fibonacci series for the value 6.
 
 ## PROGRAM
 ```
-#include <stdio.h>
-
-int main() {
-    int n = 6; 
-    int first = 0, second = 1, next;
-
-    printf("Fibonacci series for %d terms:\n", n);
-    printf("%d %d ", first, second);
-
-    for (int i = 3; i <= n; i++)
-   {
-        next = first + second;    
-        printf("%d ", next);      
-        first = second;           
-        second = next;
+#include<stdio.h>
+int main(){
+    int a=0,b=1,c,i,n;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++){
+        c=a+b;
+        printf("%d ",a);
+        a=b;
+        b=c;
     }
-
-    printf("\n");
-    return 0;     
+    return 0;    
 }
 ```
+
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/e925880a-7f86-4d02-8202-6ef8a9012937)
+
+
+![438187487-37d3a0de-c020-451a-8318-b01c9b8878bf](https://github.com/user-attachments/assets/027cd280-0576-466d-a5f7-a6e3664b1061)
 
 ## RESULT
 Thus the program to generate the Fibonacci series for the value 6 has been executed successfully.
@@ -116,26 +97,26 @@ To write a C program to read n elements as input and print the last element of t
 ## PROGRAM
 ```
 #include <stdio.h>
-
-int main() {
-
+int main()
+{
     int n;
-    scanf("%d", &n);
-
-    int arr[n];
-    printf("%d ", n);
-    for (int i = 0; i < n; i++)
- {
-        scanf("%d", &arr[i]);
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
     }
-
-    printf("Last element of the array: %d\n", arr[n - 1]);
-
-    return 0; 
+        printf("%d ",a[n-1]);
+    return 0;
 }
 ```
+
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/cd4e2f6e-45e1-4b4b-9784-6eb5e9f1ebfd)
+
+
+![438185489-b2236124-a5c4-4718-a195-cab41c548ee4](https://github.com/user-attachments/assets/da352185-b9f9-4fa8-83e2-34f3cd8d27bb)
+
+
 
 ## RESULT
 Thus the program to read n elements as input and print the last element of the array has been executed successfully.
@@ -179,11 +160,22 @@ int main()
 }
 ```
 
+
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/587c159f-4405-44ed-a8fc-60266142cb1b)
+
+![438186259-9c62d6c0-553c-4f30-9bbb-cf3e9c001236](https://github.com/user-attachments/assets/77d9ecaa-406d-4fd9-9eff-fa69d649b313)
+
 
 ## RESULT
 Thus the program to count total number of positive elements in an array has been executed successfully.
+
+
+
+
+
+ 
+ 
+
 
 # EX -15 - Replace All Even Elements With 'E' In One Dimensional Array
 
@@ -227,9 +219,8 @@ return 0;
 }
 ```
 ## Output:
-![image](https://github.com/user-attachments/assets/3b6be80f-6dd3-419c-bd80-6356aa28de40)
-
-
+ 
+![438186458-d719a89b-8e69-4f48-80b6-1f03c054ba8c](https://github.com/user-attachments/assets/22434349-b547-4459-bbbe-e3c246925157)
 
 ## Result:
 
